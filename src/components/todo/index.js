@@ -1,12 +1,18 @@
 import { DOM } from "/src/modules/dom";
+import { Menubar } from "../menubar";
+import { storage } from "/src/modules/storage";
 import iconCross from "/assets/images/icon-cross.svg";
 import iconCheck from "/assets/images/icon-check.svg";
 
-export const Todo = (todo) => {
+export const Todo = (todo, index) => {
    function onTodoClick(e) {
       if (e.target.type === "checkbox") return;
       const input = e.currentTarget.firstElementChild;
       input.checked = !input.checked;
+      const todos = storage.get("todos");
+      todos[index].completed = input.checked;
+      storage.set("todos", todos);
+      DOM.replaceEl(".menu", Menubar());
    }
 
    const todoItem = DOM.createEl("li", "todo-item");

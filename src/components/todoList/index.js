@@ -4,8 +4,8 @@ import { Menubar } from "../menubar";
 
 export const ToDoList = (todos) => {
    const todoList = DOM.createEl("ul", "todo-list");
-   todos.forEach((todo) => {
-      todoList.append(Todo(todo));
+   todos.forEach((todo, index) => {
+      todoList.append(Todo(todo, index));
    });
 
    const menu = Menubar();
