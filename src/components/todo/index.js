@@ -1,4 +1,6 @@
 import { DOM } from "/src/modules/dom";
+import iconCross from "/assets/images/icon-cross.svg";
+import iconCheck from "/assets/images/icon-check.svg";
 
 export const Todo = (todo) => {
    function onTodoClick(e) {
@@ -13,9 +15,16 @@ export const Todo = (todo) => {
    });
    const todoLabel = DOM.createEl("label", "todo-checkbox");
    todo.completed && todoCheckbox.setAttribute("checked", "");
+   todoLabel.append(DOM.createEl("img", "checkbox-icon", null, {
+      src: iconCheck,
+      alt: "checkmark"
+   }));
    const todoText = DOM.createEl("span", "todo-text", todo.text);
    todoItem.addEventListener("click", onTodoClick);
-   const removeTodo = DOM.createEl("div", "todo-remove");
+   const removeTodo = DOM.createEl("img", "todo-remove", null, {
+      src: iconCross,
+      alt: "Remove todo"
+   });
    todoItem.append(todoCheckbox, todoLabel, todoText, removeTodo);
 
    return todoItem;
