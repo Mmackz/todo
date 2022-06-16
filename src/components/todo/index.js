@@ -15,6 +15,8 @@ export const Todo = (todo) => {
    todo.completed && todoCheckbox.setAttribute("checked", "");
    const todoText = DOM.createEl("span", "todo-text", todo.text);
    todoItem.addEventListener("click", onTodoClick);
-   todoItem.append(todoCheckbox, todoLabel, todoText);
+   const removeTodo = DOM.createEl("div", "todo-remove");
+   todoItem.append(todoCheckbox, todoLabel, todoText, removeTodo);
+
    return todoItem;
 };

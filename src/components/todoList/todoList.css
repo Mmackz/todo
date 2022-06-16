@@ -1,21 +1,50 @@
 .todo-list {
    background: white;
-   width: 540px;
+   width: 100%;
    margin: 0 auto;
+   border-top-left-radius: 6px;
+   border-top-right-radius: 6px;
 }
 
 .todo-item {
-   padding: 1.25rem 1.5rem;
+   padding: 1rem 1.25rem;
    border-bottom: 1px solid var(--todo-border);
    display: flex;
    align-items: center;
 }
 
 .todo-text {
+   color: var(--text-color);
    margin-left: 1.5rem;
-   font-size: 1.125rem;
-   letter-spacing: -0.25px;
+   font-size: 0.75rem;
+   letter-spacing: -0.17px;
    transform: translateY(2px);
+}
+
+.todo-remove {
+   width: 1rem;
+   height: 1rem;
+   margin-left: auto;
+   position: relative;
+   cursor: pointer;
+}
+
+.todo-remove::after,
+.todo-remove::before {
+   content: "";
+   position: absolute;
+   left: 50%;
+   height: 100%;
+   width: 1px;
+   background-color: var(--text-color);
+}
+
+.todo-remove::after {
+   transform: rotate(-45deg);
+}
+
+.todo-remove::before {
+   transform: rotate(45deg);
 }
 
 input.checkbox {
@@ -25,8 +54,8 @@ input.checkbox {
 .todo-checkbox {
    position: relative;
    display: block;
-   height: 1.5rem;
-   width: 1.5rem;
+   height: 1.25rem;
+   width: 1.25rem;
    border-radius: 50%;
    border: 1px solid var(--todo-border);
 }
@@ -41,8 +70,8 @@ input.checkbox {
    border-top: none;
    border-right: none;
    transform: rotate(-45deg);
-   width: 7px;
-   height: 3px;
+   width: 6px;
+   height: 2px;
 }
 
 input.checkbox:checked ~ .todo-text {

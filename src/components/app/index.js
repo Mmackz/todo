@@ -7,7 +7,7 @@ import defaultTodos from "/src/data/defaultTodos.json";
 
 const App = () => {
    // create background
-   const main = DOM.createEl("main");
+   const main = DOM.createEl("main", "container");
    const bg = Background(darkModeController.getMode());
    main.append(bg);
 
