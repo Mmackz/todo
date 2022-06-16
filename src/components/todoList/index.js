@@ -1,4 +1,3 @@
-import "./todoList.css";
 import { DOM } from "/src/modules/dom";
 import { Todo } from "../todo";
 import { Menubar } from "../menubar";

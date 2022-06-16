@@ -22,29 +22,10 @@
 }
 
 .todo-remove {
-   width: 1rem;
-   height: 1rem;
+   width: 0.75rem;
+   height: 0.75rem;
    margin-left: auto;
-   position: relative;
    cursor: pointer;
-}
-
-.todo-remove::after,
-.todo-remove::before {
-   content: "";
-   position: absolute;
-   left: 50%;
-   height: 100%;
-   width: 1px;
-   background-color: var(--text-color);
-}
-
-.todo-remove::after {
-   transform: rotate(-45deg);
-}
-
-.todo-remove::before {
-   transform: rotate(45deg);
 }
 
 input.checkbox {
@@ -60,18 +41,14 @@ input.checkbox {
    border: 1px solid var(--todo-border);
 }
 
-.todo-checkbox::after {
-   content: "";
-   opacity: 0;
+.checkbox-icon {
+   width: 9px;
    position: absolute;
-   top: 35%;
-   left: 28.5%;
-   border: 2px solid white;
-   border-top: none;
-   border-right: none;
-   transform: rotate(-45deg);
-   width: 6px;
-   height: 2px;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   opacity: 0;
+   user-select: none;
 }
 
 input.checkbox:checked ~ .todo-text {
@@ -88,6 +65,6 @@ input.checkbox:checked ~ .todo-checkbox {
    );
 }
 
-input.checkbox:checked ~ .todo-checkbox::after {
+input.checkbox:checked ~ label > .checkbox-icon {
    opacity: 1;
 }

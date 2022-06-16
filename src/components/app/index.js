@@ -1,3 +1,4 @@
+import "./app.css";
 import { Background } from "../background";
 import { ToDoList } from "../todoList";
 import { DOM } from "/src/modules/dom";
