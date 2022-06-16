@@ -1,5 +1,26 @@
+/* titlebar */
+.titlebar {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 2.5rem;
+   max-height: 1.25rem;
+}
+
+.title {
+   color: #ffffff;
+   font-weight: 700;
+   font-size: 1.65rem;
+   letter-spacing: 0.675rem;
+}
+
+.lightmode-icon {
+   width: 1.25rem;
+   height: 1.25rem;
+}
+
+/* todo list */
 .todo-list {
-   background: white;
+   background: var(--todo-bg);
    width: 100%;
    margin: 0 auto;
    border-top-left-radius: 6px;

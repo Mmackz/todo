@@ -1,7 +1,8 @@
 import "./app.css";
 import { Background } from "../background";
+import { Titlebar }  from "../titlebar";
 import { ToDoList } from "../todoList";
-import { DOM } from "/src/modules/dom";
+import { DOM, setVariables } from "/src/modules/dom";
 import { storage } from "/src/modules/storage";
 import { darkModeController } from "/src/modules/darkModeController";
 import defaultTodos from "/src/data/defaultTodos.json";
@@ -16,7 +17,12 @@ const App = () => {
    if (storage.get("todos") === null) storage.set("todos", defaultTodos);
    const todos = storage.get("todos");
 
-   main.append(ToDoList(todos));
+   // set CSS variables based on current light mode
+   const root = document.documentElement;
+   const { getMode } = darkModeController;
+   setVariables(getMode());
+
+   main.append(Titlebar(), ToDoList(todos));
    return main;
 };
 

@@ -6,6 +6,7 @@ import bgMobileDark from "/assets/images/bg-mobile-dark.jpg";
 export const Background = (mode) => {
    // create dynamic image based on screen size
    const bgimg = document.createElement("picture");
+   bgimg.setAttribute("id", "bgimg");
 
    // create source for desktop
    const bgDesktop = document.createElement("source");
