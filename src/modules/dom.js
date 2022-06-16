@@ -18,15 +18,40 @@ export const DOM = (() => {
       }
       return el;
    };
-   const updateEl = (selector, content) => {
+   const updateEl = (selector, node) => {
       const el = getEl(selector);
-      el.innerHTML = content;
+      el.innerHTML = "";
+      el.appendChild(node);
+   };
+   const replaceEl = (selector, node) => {
+      const el = getEl(selector);
+      el.parentNode.replaceChild(node, el);
    };
 
    return {
       getEl,
       getEls,
       createEl,
-      updateEl
+      updateEl,
+      replaceEl
    };
 })();
+
+export const setVariables = (mode) => {
+   const root = document.documentElement;
+   if (mode === "dark") {
+      root.style.setProperty("--bg-color", "#171823");
+      root.style.setProperty("--text-color", "#C8CBE7");
+      root.style.setProperty("--todo-bg", "#25273D");
+      root.style.setProperty("--todo-border", "#393A4B");
+      root.style.setProperty("--todo-inactive", "#4D5067");
+      root.style.setProperty("--todo-placeholder", "#767992");
+   } else {
+      root.style.setProperty("--bg-color", "#f9f9f9");
+      root.style.setProperty("--text-color", "#494C6B");
+      root.style.setProperty("--todo-bg", "#ffffff");
+      root.style.setProperty("--todo-border", "#E3E4F1");
+      root.style.setProperty("--todo-inactive", "#D1D2DA");
+      root.style.setProperty("--todo-placeholder", "#9495a5");
+   }
+};

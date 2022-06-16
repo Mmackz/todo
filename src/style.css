@@ -1,12 +1,3 @@
-:root {
-   /* --bg-color: #171823; */
-   --bg-color: #f9f9f9;
-   --text-color: #494C6B;
-   --todo-bg: #ffffff;
-   --todo-border: #E3E4F1;
-   --todo-inactive: #D1D2DA;
-}
-
 body {
    font-family: 'Josefin Sans', sans-serif;
    min-height: 100vh;
