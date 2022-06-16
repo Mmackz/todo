@@ -36,9 +36,7 @@
 
 .todo-text {
    color: var(--text-color);
-   margin-left: 1.5rem;
-   font-size: 0.75rem;
-   letter-spacing: -0.17px;
+   margin-left: 0.75rem;
    transform: translateY(2px);
 }
 
@@ -88,4 +86,23 @@ input.checkbox:checked ~ .todo-checkbox {
 
 input.checkbox:checked ~ label > .checkbox-icon {
    opacity: 1;
+}
+
+/* menubar */
+.menu {
+   color: var(--todo-inactive);
+   padding: 1rem 1.25rem 1.35rem;
+   background: var(--todo-bg);
+   border-bottom-left-radius: 6px;
+   border-bottom-right-radius: 6px;
+   display: flex;
+   justify-content: space-between;
+}
+
+.clear-completed {
+   cursor: pointer;
+}
+
+.clear-completed:hover {
+   color: #e3e4f1;
 }
