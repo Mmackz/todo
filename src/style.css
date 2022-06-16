@@ -1,5 +1,10 @@
 :root {
-   --bg-color: #171823
+   /* --bg-color: #171823; */
+   --bg-color: #f9f9f9;
+   --text-color: #494C6B;
+   --todo-bg: #ffffff;
+   --todo-border: #E3E4F1;
+   --todo-inactive: #D1D2DA;
 }
 
 body {
@@ -20,6 +25,7 @@ img {
    position: absolute;
    top: 0;
    left: 0;
+   z-index: -1;
 }
 
 @media (min-width: 540px) {
