@@ -16,6 +16,7 @@
 .lightmode-icon {
    width: 1.25rem;
    height: 1.25rem;
+   cursor: pointer;
 }
 
 /* add todo*/
@@ -83,6 +84,7 @@ input.checkbox {
    border-radius: 50%;
    border: 1px solid var(--todo-border);
    flex-shrink: 0;
+   cursor: pointer;
 }
 
 .checkbox-icon {
@@ -95,7 +97,7 @@ input.checkbox {
    user-select: none;
 }
 
-input.checkbox:checked ~ .todo-text {
+input.checkbox:checked ~ .todo-text:not(.todo-input) {
    text-decoration: line-through;
    color: var(--todo-inactive);
 }
@@ -164,4 +166,8 @@ input.checkbox:checked ~ label > .checkbox-icon {
 
 .submenu > .active {
    color: #3a7cfd;
+}
+
+.submenu > div {
+   cursor: pointer;
 }

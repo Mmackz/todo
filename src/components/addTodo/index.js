@@ -27,7 +27,7 @@ export const AddTodo = () => {
          e.preventDefault();
          const todo = {
             text: todoText.textContent,
-            completed: false
+            completed: todoCheckbox.checked
          };
          const text = todoText.textContent.trim();
          todoText.textContent = "";
@@ -36,7 +36,12 @@ export const AddTodo = () => {
          todos.push(todo);
          storage.set("todos", todos.map((todo, i) => ({ ...todo, index: i })));
          list.renderList();
+         todoCheckbox.checked = false;
       }
+   });
+
+   todoLabel.addEventListener("click", () => {
+      todoCheckbox.checked = !todoCheckbox.checked;
    });
 
 
