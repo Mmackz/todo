@@ -1,6 +1,6 @@
 import { DOM } from "/src/modules/dom";
 import { storage } from "/src/modules/storage";
-import { ToDoList } from "../todoList";
+import { list } from "/src/modules/list";
 import iconCheck from "/assets/images/icon-check.svg";
 
 export const AddTodo = () => {
@@ -34,8 +34,8 @@ export const AddTodo = () => {
          if (!text) return;
          const todos = storage.get("todos");
          todos.push(todo);
-         storage.set("todos", todos);
-         DOM.replaceEl(".todo-list", ToDoList(todos));
+         storage.set("todos", todos.map((todo, i) => ({ ...todo, index: i })));
+         list.renderList();
       }
    });
 

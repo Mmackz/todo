@@ -1,5 +1,6 @@
 import { DOM } from "/src/modules/dom";
 import { ToDoList } from "../todoList";
+import { list } from "/src/modules/list";
 import { storage, currentTab } from "/src/modules/storage";
 
 export const Menubar = () => {
@@ -25,8 +26,8 @@ export const Menubar = () => {
    });
    clearCompleted.addEventListener("click", () => {
       const todos = storage.get("todos").filter((todo) => !todo.completed);
-      storage.set("todos", todos);
-      DOM.replaceEl(".todo-list", ToDoList(todos));
+      storage.set("todos", todos.map((todo, i) => ({ ...todo, index: i })));
+      list.renderList();
    });
    menu.append(itemsLeft, Submenu(), clearCompleted);
    return menu;
@@ -53,7 +54,7 @@ export const Submenu = () => {
          "aria-role": "button",
          class: currentTab.get() === i ? "active" : ""
       });
-      el.addEventListener("click", () => changeList(i, el));
+      el.addEventListener("click", () => list.changeList(i, el));
       inner.append(el);
    });
    submenu.append(inner);
