@@ -107,6 +107,10 @@ input.checkbox:checked ~ label > .checkbox-icon {
    color: #e3e4f1;
 }
 
+.menu > .submenu-container {
+   display: none;
+}
+
 .submenu-container:not(:nth-child(2)) {
    background: var(--todo-bg);
    padding: 1rem 1rem 1.125rem;

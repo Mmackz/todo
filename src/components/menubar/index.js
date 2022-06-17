@@ -28,21 +28,20 @@ export const Menubar = () => {
       storage.set("todos", todos);
       DOM.replaceEl(".todo-list", ToDoList(todos));
    });
-   menu.append(itemsLeft, clearCompleted);
+   menu.append(itemsLeft, Submenu(), clearCompleted);
    return menu;
 };
 
 export const Submenu = () => {
    function changeList(i, el) {
       if (el.classList.contains("active")) return;
-      DOM.getEl(".submenu > .active").classList.remove("active");
-      el.classList.add("active");
       let todos = storage.get("todos");
       currentTab.set(i);
       if (i === 1) todos = todos.filter((todo) => !todo.completed);
       if (i === 2) todos = todos.filter((todo) => todo.completed);
       DOM.replaceEl(".todo-list", ToDoList(todos));
       DOM.replaceEl(".menu", Menubar());
+      DOM.replaceEl(".container > .submenu-container", Submenu());
    }
 
    const submenu = DOM.createEl("div", "submenu-container");
