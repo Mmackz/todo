@@ -18,13 +18,37 @@
    height: 1.25rem;
 }
 
+/* add todo*/
+div.add-todo {
+   background: var(--todo-bg);
+   border-radius: 5px;
+   margin-bottom: 1rem;
+   padding-top: 14px;
+   padding-bottom: 14px;
+}
+
+.todo-input {
+   position: relative;
+   width: 100%;
+   caret-color: #3A7CFD;
+}
+
+.todo-input:empty:before {
+   content: attr(placeholder);
+   color: #767992;
+   display: block;
+   position: absolute;
+   width: 100%;
+   font-family: 'Josefin Sans', sans-serif;
+}
+
 /* todo list */
 .todo-list {
    background: var(--todo-bg);
    width: 100%;
    margin: 0 auto;
-   border-top-left-radius: 6px;
-   border-top-right-radius: 6px;
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
 }
 
 .todo-item {
@@ -58,6 +82,7 @@ input.checkbox {
    width: 1.25rem;
    border-radius: 50%;
    border: 1px solid var(--todo-border);
+   flex-shrink: 0;
 }
 
 .checkbox-icon {
@@ -93,8 +118,8 @@ input.checkbox:checked ~ label > .checkbox-icon {
    color: var(--todo-inactive);
    padding: 1rem 1.25rem 1.35rem;
    background: var(--todo-bg);
-   border-bottom-left-radius: 6px;
-   border-bottom-right-radius: 6px;
+   border-bottom-left-radius: 5px;
+   border-bottom-right-radius: 5px;
    display: flex;
    justify-content: space-between;
 }
@@ -114,7 +139,7 @@ input.checkbox:checked ~ label > .checkbox-icon {
 .submenu-container:not(:nth-child(2)) {
    background: var(--todo-bg);
    padding: 1rem 1rem 1.125rem;
-   border-radius: 6px;
+   border-radius: 5px;
    margin-top: 1rem;
 }
 
