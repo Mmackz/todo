@@ -23,6 +23,11 @@ export const Menubar = () => {
       "aria-label": "Clear completed todos",
       "aria-role": "button"
    });
+   clearCompleted.addEventListener("click", () => {
+      const todos = storage.get("todos").filter((todo) => !todo.completed);
+      storage.set("todos", todos);
+      DOM.replaceEl(".todo-list", ToDoList(todos));
+   });
    menu.append(itemsLeft, clearCompleted);
    return menu;
 };
