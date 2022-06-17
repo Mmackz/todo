@@ -2,7 +2,7 @@ import "./app.css";
 import { Background } from "../background";
 import { Titlebar }  from "../titlebar";
 import { ToDoList } from "../todoList";
-import { Menubar } from "../menubar";
+import { Menubar, Submenu } from "../menubar";
 import { DOM, setVariables } from "/src/modules/dom";
 import { storage } from "/src/modules/storage";
 import { darkModeController } from "/src/modules/darkModeController";
@@ -23,7 +23,7 @@ const App = () => {
    const { getMode } = darkModeController;
    setVariables(getMode());
 
-   main.append(Titlebar(), ToDoList(todos), Menubar());
+   main.append(Titlebar(), ToDoList(todos), Menubar(), Submenu());
    return main;
 };
 

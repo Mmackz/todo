@@ -14,3 +14,17 @@ export const storage = (() => {
       reset
    }
 })();
+
+export const currentTab = (() => {
+   let currentTab = 0;
+   function get() {
+      return currentTab;
+   }
+   function set(tab) {
+      currentTab = tab;
+   }
+   return {
+      get,
+      set
+   }
+})();

@@ -106,3 +106,26 @@ input.checkbox:checked ~ label > .checkbox-icon {
 .clear-completed:hover {
    color: #e3e4f1;
 }
+
+.submenu-container:not(:nth-child(2)) {
+   background: var(--todo-bg);
+   padding: 1rem 1rem 1.125rem;
+   border-radius: 6px;
+   margin-top: 1rem;
+}
+
+.submenu {
+   display: flex;
+   align-items: center;
+   gap: 1.125rem;
+   font-size: 0.875rem;
+   line-height: 0.875rem;
+   font-weight: 700;
+   color: var(--todo-inactive);
+   width: fit-content;
+   margin: 0 auto;
+}
+
+.submenu > .active {
+   color: #3a7cfd;
+}
