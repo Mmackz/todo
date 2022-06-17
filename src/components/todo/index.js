@@ -1,4 +1,5 @@
 import { DOM } from "/src/modules/dom";
+import { ToDoList } from "../todoList";
 import { Menubar } from "../menubar";
 import { storage } from "/src/modules/storage";
 import iconCross from "/assets/images/icon-cross.svg";
@@ -13,6 +14,13 @@ export const Todo = (todo, index) => {
       todos[index].completed = input.checked;
       storage.set("todos", todos);
       DOM.replaceEl(".menu", Menubar());
+   }
+
+   function onTodoDelete({ target }) {
+      const todos = storage.get("todos");
+      todos.splice(index, 1);
+      storage.set("todos", todos);
+      DOM.replaceEl(".todo-list", ToDoList(todos));
    }
 
    const todoItem = DOM.createEl("li", "todo-item");
@@ -31,6 +39,7 @@ export const Todo = (todo, index) => {
       src: iconCross,
       alt: "Remove todo"
    });
+   removeTodo.addEventListener("click", onTodoDelete);
    todoItem.append(todoCheckbox, todoLabel, todoText, removeTodo);
 
    return todoItem;
