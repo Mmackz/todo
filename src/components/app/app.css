@@ -1,6 +1,6 @@
 /* global styles */
 body {
-   font-family: 'Josefin Sans', sans-serif;
+   font-family: "Josefin Sans", sans-serif;
    min-height: 100vh;
    height: 100%;
    background: var(--bg-color);
@@ -64,7 +64,7 @@ div.add-todo {
 .todo-input {
    position: relative;
    width: 100%;
-   caret-color: #3A7CFD;
+   caret-color: #3a7cfd;
 }
 
 .todo-input:empty:before {
@@ -73,7 +73,7 @@ div.add-todo {
    display: block;
    position: absolute;
    width: 100%;
-   font-family: 'Josefin Sans', sans-serif;
+   font-family: "Josefin Sans", sans-serif;
 }
 
 /* todo list */
@@ -90,6 +90,7 @@ div.add-todo {
    border-bottom: 1px solid var(--todo-border);
    display: flex;
    align-items: center;
+   user-select: none;
 }
 
 .todo-text {
@@ -98,11 +99,20 @@ div.add-todo {
    transform: translateY(2px);
 }
 
+.todo-text:not(.todo-input) {
+   cursor: grab;
+}
+
 .todo-remove {
    width: 0.75rem;
    height: 0.75rem;
    margin-left: auto;
    cursor: pointer;
+   transition: transform 0.35s ease-in-out;
+}
+
+.todo-remove:hover {
+   transform: scale(1.1);
 }
 
 input.checkbox {
@@ -269,7 +279,7 @@ input.checkbox:checked ~ label > .checkbox-icon {
    .todo-item {
       padding: 1.25rem 1.5rem;
    }
-   
+
    .todo-text {
       color: var(--text-color);
       margin-left: 1.5rem;
@@ -278,6 +288,11 @@ input.checkbox:checked ~ label > .checkbox-icon {
    .todo-remove {
       width: 1.125rem;
       height: 1.125rem;
+      display: none;
+   }
+
+   .todo-item:hover > .todo-remove {
+      display: block;
    }
 
    .todo-checkbox {
@@ -306,6 +321,5 @@ input.checkbox:checked ~ label > .checkbox-icon {
 
    .footer-text {
       margin-top: 3rem;
-      transform: translateY(2px);
    }
 }
