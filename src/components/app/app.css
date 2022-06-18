@@ -123,6 +123,10 @@ input.checkbox:checked ~ label > .checkbox-icon {
    border-bottom: 1px solid var(--todo-border);
 }
 
+.sortable-drag {
+   opacity: 0;
+}
+
 /* menubar */
 .menu {
    color: var(--text-secondary);

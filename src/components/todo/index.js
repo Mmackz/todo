@@ -24,7 +24,7 @@ export const Todo = (todo, index) => {
       list.renderList();
    }
 
-   const todoItem = DOM.createEl("li", "todo-item");
+   const todoItem = DOM.createEl("li", "todo-item", null, { "data-index": todo.index });
    const todoCheckbox = DOM.createEl("input", "checkbox", null, {
       type: "checkbox"
    });
