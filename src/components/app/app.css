@@ -1,3 +1,35 @@
+/* global styles */
+body {
+   font-family: 'Josefin Sans', sans-serif;
+   min-height: 100vh;
+   height: 100%;
+   background: var(--bg-color);
+   font-size: 0.75rem;
+   line-height: 0.75rem;
+   letter-spacing: -0.17px;
+}
+
+img {
+   width: 100%;
+}
+
+.container {
+   padding: 3rem 1.5rem;
+   margin: 0 auto;
+   max-width: 540px;
+   box-sizing: content-box;
+}
+
+.bg-image {
+   min-height: 200px;
+   object-fit: cover;
+   object-position: 33.3334%, 0%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: -1;
+}
+
 /* titlebar */
 .titlebar {
    display: flex;
@@ -24,8 +56,8 @@ div.add-todo {
    background: var(--todo-bg);
    border-radius: 5px;
    margin-bottom: 1rem;
-   padding-top: 14px;
-   padding-bottom: 14px;
+   padding-top: 0.875rem;
+   padding-bottom: 0.875rem;
    max-height: 3rem;
 }
 
@@ -188,4 +220,88 @@ input.checkbox:checked ~ label > .checkbox-icon {
    text-align: center;
    margin-top: 2.5rem;
    transform: translateY(2px);
+}
+
+@media (min-width: 540px) {
+   body {
+      font-size: 1.125rem;
+      line-height: 1.125rem;
+      letter-spacing: -0.25px;
+   }
+
+   .container {
+      padding: 4.375rem 1.5rem 3.25rem;
+   }
+
+   .bg-image {
+      min-height: 300px;
+   }
+
+   .titlebar {
+      max-height: 3rem;
+      height: 3rem;
+   }
+
+   .title {
+      font-size: 2.5rem;
+      letter-spacing: 0.9375rem;
+      align-self: center;
+      transform: translateY(-3px);
+   }
+
+   .lightmode-icon {
+      height: 1.625rem;
+      width: 1.625rem;
+      align-self: center;
+   }
+
+   div.add-todo {
+      margin-bottom: 1.5rem;
+      padding-top: 1.25rem;
+      padding-bottom: 1.25rem;
+      max-height: 4rem;
+   }
+
+   .todo-item {
+      padding: 1.25rem 1.5rem;
+   }
+   
+   .todo-text {
+      color: var(--text-color);
+      margin-left: 1.5rem;
+   }
+
+   .todo-remove {
+      width: 1.125rem;
+      height: 1.125rem;
+   }
+
+   .todo-checkbox {
+      height: 1.5rem;
+      width: 1.5rem;
+   }
+
+   .checkbox-icon {
+      width: 11px;
+   }
+
+   .menu {
+      font-size: 0.875rem;
+      line-height: 0.875rem;
+      letter-spacing: -0.19px;
+      padding: 1.08rem 1.5rem 1.17rem;
+   }
+
+   .submenu-container {
+      display: none;
+   }
+
+   .menu > .submenu-container {
+      display: block;
+   }
+
+   .footer-text {
+      margin-top: 3rem;
+      transform: translateY(2px);
+   }
 }
