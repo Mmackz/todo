@@ -17,7 +17,8 @@ export const Todo = (todo, index) => {
       list.renderList();
    }
 
-   function onTodoDelete({ target }) {
+   function onTodoDelete(e) {
+      e.stopPropagation();
       const todos = storage.get("todos");
       todos.splice(index, 1);
       storage.set("todos", todos.map((todo, i) => ({ ...todo, index: i })));
