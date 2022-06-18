@@ -48,6 +48,7 @@ export const setVariables = (mode) => {
       root.style.setProperty("--todo-border", "#393A4B");
       root.style.setProperty("--todo-inactive", "#4D5067");
       root.style.setProperty("--todo-placeholder", "#767992");
+      root.style.setProperty("--hover-color", "#e3e4f1");
    } else {
       root.style.setProperty("--bg-color", "#f9f9f9");
       root.style.setProperty("--box-shadow", "rgba(194, 195, 214, 0.5)");
@@ -57,5 +58,6 @@ export const setVariables = (mode) => {
       root.style.setProperty("--todo-border", "#E3E4F1");
       root.style.setProperty("--todo-inactive", "#D1D2DA");
       root.style.setProperty("--todo-placeholder", "#9495A5");
+      root.style.setProperty("--hover-color", "#494C6B");
    }
 };

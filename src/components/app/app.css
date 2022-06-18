@@ -176,7 +176,7 @@ input.checkbox:checked ~ label > .checkbox-icon {
 }
 
 .clear-completed:hover {
-   color: #e3e4f1;
+   color: var(--hover-color);
 }
 
 .menu > .submenu-container {
@@ -209,6 +209,10 @@ input.checkbox:checked ~ label > .checkbox-icon {
 
 .submenu > div {
    cursor: pointer;
+}
+
+.submenu > div:not(.active):hover {
+   color: var(--hover-color);
 }
 
 /* footer */
