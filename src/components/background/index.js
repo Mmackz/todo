@@ -2,30 +2,34 @@ import bgDesktopLight from "/assets/images/bg-desktop-light.jpg";
 import bgDesktopDark from "/assets/images/bg-desktop-dark.jpg";
 import bgMobileLight from "/assets/images/bg-mobile-light.jpg";
 import bgMobileDark from "/assets/images/bg-mobile-dark.jpg";
+import { DOM } from "/src/modules/dom";
 
 export const Background = (mode) => {
    // create dynamic image based on screen size
-   const bgimg = document.createElement("picture");
-   bgimg.setAttribute("id", "bgimg");
+   const bgimg = DOM.createEl("picture", null, null, {
+      id: "bgimg"
+   });
 
    // create source for desktop
-   const bgDesktop = document.createElement("source");
    const bgDesktopImg = mode === "dark" ? bgDesktopDark : bgDesktopLight;
-   bgDesktop.setAttribute("media", "(min-width: 540px)");
-   bgDesktop.setAttribute("srcset", bgDesktopImg);
+   const bgDesktop = DOM.createEl("source", null, null, {
+      media: "(min-width: 540px)",
+      srcset: bgDesktopImg
+   });
 
    // create source for mobile
-   const bgMobile = document.createElement("source");
    const bgMobileImg = mode === "dark" ? bgMobileDark : bgMobileLight;
-   bgMobile.setAttribute("media", "(max-width: 539.98px)");
-   bgMobile.setAttribute("srcset", bgMobileImg);
+   const bgMobile = DOM.createEl("source", null, null, {
+      media: "(max-width: 539.98px)",
+      srcset: bgMobileImg
+   });
 
    // create fallback image
-   const bgImage = document.createElement("img");
-   bgImage.setAttribute("src", mode === "dark" ? bgDesktopDark : bgDesktopLight);
-   bgImage.setAttribute("alt", "background");
-   bgImage.setAttribute("aria-hidden", "true");
-   bgImage.classList.add("bg-image");
+   const bgImage = DOM.createEl("img", "bg-image", null, {
+      src: mode === "dark" ? bgDesktopDark : bgDesktopLight,
+      alt: "background",
+      "aria-hidden": "true"
+   });
 
    // append sources to picture
    bgimg.append(bgDesktop, bgMobile, bgImage);
