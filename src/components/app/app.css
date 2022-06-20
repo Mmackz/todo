@@ -28,6 +28,7 @@ img {
    top: 0;
    left: 0;
    z-index: -1;
+   animation: fadeInImage 0.5s ease-in-out;
 }
 
 /* titlebar */
@@ -182,7 +183,7 @@ input.checkbox:checked ~ label > .checkbox-icon {
    opacity: 1;
 }
 
-.todo-empty {
+div.todo-empty {
    padding: 2rem;
    margin: 0;
    text-align: center;
@@ -350,5 +351,15 @@ input.checkbox:checked ~ label > .checkbox-icon {
 
    .footer-text {
       margin-top: 3rem;
+   }
+}
+
+@keyframes fadeInImage {
+   0% {
+      opacity: 0.25;
+   }
+
+   100% {
+      opacity: 1;
    }
 }

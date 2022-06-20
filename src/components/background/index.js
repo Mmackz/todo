@@ -25,7 +25,7 @@ export const Background = (mode) => {
    });
 
    // create fallback image
-   const bgImage = DOM.createEl("img", ["bg-image","animate__animated", "animate__fadeIn"], null, {
+   const bgImage = DOM.createEl("img", ["bg-image", "fade-in"], null, {
       src: mode === "dark" ? bgDesktopDark : bgDesktopLight,
       alt: "background",
       "aria-hidden": "true"
