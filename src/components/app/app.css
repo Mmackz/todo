@@ -91,6 +91,9 @@ div.add-todo {
 .todo-item {
    padding: 1rem 1.25rem;
    border-bottom: 1px solid var(--todo-border);
+}
+
+.todo-inner {
    display: flex;
    align-items: center;
    user-select: none;

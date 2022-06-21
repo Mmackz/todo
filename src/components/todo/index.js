@@ -26,6 +26,7 @@ export const Todo = (todo, index) => {
    }
 
    const todoItem = DOM.createEl("li", "todo-item", null, { "data-index": todo.index });
+   const todoInner = DOM.createEl("div", "todo-inner");
    const todoCheckbox = DOM.createEl("input", "checkbox", null, {
       type: "checkbox"
    });
@@ -44,7 +45,8 @@ export const Todo = (todo, index) => {
       alt: "Remove todo"
    });
    removeTodo.addEventListener("click", onTodoDelete);
-   todoItem.append(todoCheckbox, todoLabel, todoText, removeTodo);
+   todoInner.append(todoCheckbox, todoLabel, todoText, removeTodo);
+   todoItem.append(todoInner);
 
    return todoItem;
 };
