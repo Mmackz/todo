@@ -8,7 +8,7 @@ import iconCheck from "/assets/images/icon-check.svg";
 export const Todo = (todo, index) => {
    function onTodoClick(e) {
       if (e.target.type === "checkbox") return;
-      const input = e.currentTarget.firstElementChild;
+      const input = e.currentTarget.firstChild.firstChild;
       input.checked = !input.checked;
       const todos = storage.get("todos");
       todos[todo.index].completed = input.checked;
