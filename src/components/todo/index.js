@@ -19,10 +19,13 @@ export const Todo = (todo, index) => {
 
    function onTodoDelete(e) {
       e.stopPropagation();
-      const todos = storage.get("todos");
-      todos.splice(index, 1);
-      storage.set("todos", todos.map((todo, i) => ({ ...todo, index: i })));
-      list.renderList();
+      e.target.parentNode.classList.add("animate__animated", "animate__fadeOutRight")
+      setTimeout(() => {
+         const todos = storage.get("todos");
+         todos.splice(index, 1);
+         storage.set("todos", todos.map((todo, i) => ({ ...todo, index: i })));
+         list.renderList();
+      }, 500)
    }
 
    const todoItem = DOM.createEl("li", "todo-item", null, { "data-index": todo.index });

@@ -56,6 +56,8 @@ img {
 
 /* add todo*/
 div.add-todo {
+   display: flex;
+   align-items: center;
    background: var(--todo-bg);
    border-radius: 5px;
    margin-bottom: 1rem;
@@ -319,7 +321,7 @@ div.todo-empty {
       display: none;
    }
 
-   .todo-item:hover > .todo-remove {
+   .todo-item:hover .todo-remove {
       display: block;
    }
 
