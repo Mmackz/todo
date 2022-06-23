@@ -88,6 +88,7 @@ div.add-todo {
    margin: 0 auto;
    border-top-left-radius: 5px;
    border-top-right-radius: 5px;
+   overflow: hidden;
 }
 
 .todo-item {
@@ -197,6 +198,10 @@ div.todo-empty {
 
 .sortable-drag {
    opacity: 0;
+}
+
+.fadeRight {
+   animation: fadeOutRight 0.6s ease-out;
 }
 
 /* menubar */
@@ -366,5 +371,16 @@ div.todo-empty {
 
    100% {
       opacity: 1;
+   }
+}
+
+@keyframes fadeOutRight {
+   0% {
+      opacity: 1;
+   }
+
+   100% {
+      opacity: 0;
+      transform: translateX(100%);
    }
 }

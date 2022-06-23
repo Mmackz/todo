@@ -19,7 +19,7 @@ export const Todo = (todo, index) => {
 
    function onTodoDelete(e) {
       e.stopPropagation();
-      e.target.parentNode.classList.add("animate__animated", "animate__fadeOutRight")
+      e.target.parentNode.classList.add("fadeRight")
       setTimeout(() => {
          const todos = storage.get("todos");
          todos.splice(index, 1);
@@ -53,3 +53,13 @@ export const Todo = (todo, index) => {
 
    return todoItem;
 };
+
+/* 
+ideas
+-----
+  - add inner div to animate out when todo is completed 
+  - animate in when todo is added
+  - add hover effect to ring when todo-item is hovered
+  - animate list change
+  - add some some transitions for hover effect
+*/
