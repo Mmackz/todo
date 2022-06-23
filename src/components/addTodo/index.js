@@ -17,9 +17,7 @@ export const AddTodo = () => {
       type: "text",
       placeholder: "Create a new todo...",
       contenteditable: "",
-      spellcheck: "false",
-      "aria-role": "input",
-      "aria-label": "Create a new todo"
+      spellcheck: "false"
    });
 
    todoText.addEventListener("keydown", e => {

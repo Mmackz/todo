@@ -21,8 +21,7 @@ export const Menubar = () => {
    // create button to clear completed todos
    const clearCompleted = DOM.createEl("div", "clear-completed", "Clear Completed", {
       tabindex: "0",
-      "aria-label": "Clear completed todos",
-      "aria-role": "button"
+      "role": "button"
    });
    clearCompleted.addEventListener("click", () => {
       const todos = storage.get("todos").filter((todo) => !todo.completed);
@@ -50,8 +49,7 @@ export const Submenu = () => {
    ["All", "Active", "Completed"].forEach((item, i) => {
       const el = DOM.createEl("div", "submenu-item", item, {
          tabindex: "0",
-         "aria-label": `Show ${item} todos`,
-         "aria-role": "button",
+         "role": "button",
          class: currentTab.get() === i ? "active" : ""
       });
       el.addEventListener("click", () => list.changeList(i, el));
