@@ -14,8 +14,7 @@ export const AddTodo = () => {
       alt: "checkmark"
    }));
    const todoText = DOM.createEl("p", ["todo-text", "todo-input"], null, {
-      type: "text",
-      placeholder: "Create a new todo...",
+      pholder: "Create a new todo...",
       contenteditable: "",
       spellcheck: "false"
    });

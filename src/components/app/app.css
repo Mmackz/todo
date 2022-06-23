@@ -73,7 +73,7 @@ div.add-todo {
 }
 
 .todo-input:empty:before {
-   content: attr(placeholder);
+   content: attr(pholder);
    color: var(--todo-placeholder);
    display: block;
    position: absolute;
