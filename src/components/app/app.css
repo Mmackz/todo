@@ -73,7 +73,7 @@ div.add-todo {
 }
 
 .todo-input:empty:before {
-   content: attr(pholder);
+   content: attr(data-text);
    color: var(--todo-placeholder);
    display: block;
    position: absolute;
@@ -295,7 +295,7 @@ div.todo-empty {
       font-size: 2.5rem;
       letter-spacing: 0.9375rem;
       align-self: center;
-      transform: translateY(-2px);
+      transform: translateY(2px);
    }
 
    .lightmode-icon {
