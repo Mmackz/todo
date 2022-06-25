@@ -1,7 +1,7 @@
 {
    "name": "app",
    "version": "1.0.0",
-   "description": "Todo app",
+   "description": "Todo app challenge for front-end mentor",
    "main": "index.js",
    "scripts": {
       "start": "webpack --config webpack.dev.js",
